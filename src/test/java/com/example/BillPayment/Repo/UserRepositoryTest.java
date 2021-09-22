@@ -19,10 +19,13 @@ class UserRepositoryTest {
     public void saveuser() {
  
     	
-        Users user = Users.builder().linkedaccount("123456789").loginid("xyz77").password("12345").role(roleManager)
-                .build();
-
-        userrepositoru.save(user);
+		/*
+		 * Users user =
+		 * Users.builder().linkedaccount("123456789").loginid("xyz77").password("12345")
+		 * .role(roleManager) .build();
+		 * 
+		 * userrepositoru.save(user);
+		 */
         
     }
 
