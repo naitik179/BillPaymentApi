@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,6 +23,10 @@ import lombok.NoArgsConstructor;
 public class Bills {
 	
 	@Id
+	@GeneratedValue(
+            strategy = GenerationType.AUTO,
+            generator = "bills_sequence"
+    )
 	private Long billid;
 	private String billercode;
 	

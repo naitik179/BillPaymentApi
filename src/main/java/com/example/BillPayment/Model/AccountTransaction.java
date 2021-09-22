@@ -42,21 +42,22 @@ public class AccountTransaction {
 	private String description;
 	
 	
-	@ManyToOne(
-            cascade = CascadeType.ALL
-    )
-    @JoinColumn(
-            name = "sequenceid",
-            referencedColumnName = "sequenceid"
-    )
-	private Accounts sequenceid;
+//	@ManyToOne(
+//            //cascade = CascadeType.ALL
+//    )
+//    @JoinColumn(
+//            name = "seqid",
+//            referencedColumnName = "sequenceid"
+//    )
+//	private Accounts seqid;
+	private Long seqid;
 	
 	
 	// to be mapped with bills - billid
 	@OneToOne(
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            optional = false
+            //cascade = CascadeType.ALL,
+            //fetch = FetchType.LAZY,
+            //optional = false
     )
     @JoinColumn(
             name = "billid",

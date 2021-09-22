@@ -1,6 +1,6 @@
 package com.example.BillPayment.Model;
 
-import javax.persistence.CascadeType;
+//import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -38,7 +38,7 @@ public class Users {
 	
 	
 	@ManyToOne(
-            cascade = CascadeType.ALL
+            //cascade = CascadeType.ALL
     )
     @JoinColumn(
             name = "roleid",

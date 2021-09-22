@@ -25,10 +25,9 @@ public class MasterBillersController {
 		this.masterBillersService = masterBillersService;
 	}
 	
-	@GetMapping("/landing")
-    public String getPage() {
-    	return "Welcome";
-    }
+	/*
+	 * @GetMapping("/landing") public String getPage() { return "Welcome"; }
+	 */
 	
     @PostMapping("/addBiller")
     public MasterBillers addBiller(@RequestBody MasterBillers biller) {
