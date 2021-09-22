@@ -34,7 +34,7 @@ public class Users {
 
 	private String loginid;
 	private String password;
-	private String linkedaccount;
+	/* private String linkedaccount; */
 	
 	
 	@ManyToOne(

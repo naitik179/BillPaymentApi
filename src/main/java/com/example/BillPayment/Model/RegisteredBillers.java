@@ -26,7 +26,6 @@ public class RegisteredBillers {
 	
 	// mapped to be bill-consumerno
 	private String consumerno;
-	private Long cusumeraccountno;
 	private Boolean autopay;
 	private Long limitamount;
 
