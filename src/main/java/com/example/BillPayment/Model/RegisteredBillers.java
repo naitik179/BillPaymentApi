@@ -1,7 +1,9 @@
 package com.example.BillPayment.Model;
 
-import javax.persistence.CascadeType;
+//import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 //import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -21,6 +23,10 @@ import lombok.NoArgsConstructor;
 public class RegisteredBillers {
 	
 	@Id
+	@GeneratedValue(
+            strategy = GenerationType.AUTO,
+            generator = "generatedBillers_sequence"
+    )
 	private Long billerid;
 	
 	
@@ -30,7 +36,7 @@ public class RegisteredBillers {
 	private Long limitamount;
 
 	@ManyToOne(
-            cascade = CascadeType.ALL
+            //cascade = CascadeType.ALL
     )
     @JoinColumn(
             name = "billercode",
@@ -39,7 +45,7 @@ public class RegisteredBillers {
 	private MasterBillers billercode;
 	
 	@ManyToOne(
-            cascade = CascadeType.ALL
+            //cascade = CascadeType.ALL
     )
     @JoinColumn(
             name = "consumeraccountno",
