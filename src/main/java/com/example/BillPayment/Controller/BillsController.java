@@ -9,10 +9,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.BillPayment.Model.Bills;
+import com.example.BillPayment.Model.Users;
 import com.example.BillPayment.Service.BillsService;
 
 @RestController
@@ -50,6 +52,11 @@ public class BillsController {
 		return new ResponseEntity<>(newbill , HttpStatus.CREATED);
 		
 	}	
+	
+	@PutMapping("/bills/{billid}")
+    public Bills updateBillPayment(@PathVariable Long billid) {
+        return billService.BillPayment(billid);
+    }
 	
 	
 

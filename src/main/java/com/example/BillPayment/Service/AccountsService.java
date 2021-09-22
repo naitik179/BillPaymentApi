@@ -38,8 +38,8 @@ public class AccountsService {
 		return accountsRepository.findByAccname(name);
 	}
 
-	public Optional<Accounts> getAccountUserByAccount(Long customerAccount) {
-		return accountsRepository.findById(customerAccount);
+	public Accounts getAccountUserByAccount(Long customerAccount) {
+		return accountsRepository.findById(customerAccount).orElse(null);
 	}
 
 	public void deleteAccountById(Long customerAccount) {

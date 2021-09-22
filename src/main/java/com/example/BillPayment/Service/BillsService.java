@@ -7,7 +7,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.BillPayment.Model.Accounts;
 import com.example.BillPayment.Model.Bills;
+import com.example.BillPayment.Repo.AccountsRepository;
 //import com.example.BillPayment.Model.RegisteredBillers;
 import com.example.BillPayment.Repo.BillsRepository;
 import com.example.BillPayment.Service.BillsService;
@@ -17,6 +19,9 @@ public class BillsService {
 
 	@Autowired
 	private BillsRepository billsRepository;
+	
+	@Autowired
+	private AccountsRepository accountsRepository;
 
 	public BillsService(BillsRepository billsRepository) {
 		super();
@@ -46,5 +51,18 @@ public class BillsService {
 		return res;
 	}
 	
+	public Bills BillPayment(Long billid) {
+		Bills bill = findbyID(billid);
+		Long custaccno = bill.getBillerid().getConsumeraccountno().getConsumeraccountno();
+		
+		Accounts account = accountsRepository.findById(custaccno).orElse(null);
+		if(bill.getAmount() < account.getCurrentbal()) {
+			account.setCurrentbal(account.getCurrentbal() - bill.getAmount());
+			bill.setStatus(false);
+			accountsRepository.save(account);
+			billsRepository.save(bill);
+		}
+		return bill;
+	}
 	
 }
