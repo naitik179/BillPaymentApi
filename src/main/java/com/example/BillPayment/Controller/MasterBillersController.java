@@ -57,7 +57,7 @@ public class MasterBillersController {
 	 * masterBillersService.getBillerByName(name); }
 	 */
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/deleteBiller/{id}")
     public String deleteBiller(@PathVariable Long id) {
         return masterBillersService.deleteBiller(id);
     }
