@@ -29,10 +29,8 @@ public class RegisteredBillers {
 	private Boolean autopay;
 	private Long limitamount;
 
-	@OneToOne(
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,
-            optional = false
+	@ManyToOne(
+            cascade = CascadeType.ALL
     )
     @JoinColumn(
             name = "billercode",
