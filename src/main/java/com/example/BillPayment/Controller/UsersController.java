@@ -28,12 +28,6 @@ public class UsersController {
 	public List<Users> list() {
             return usersService.getAllUsers();
     }
-	
-	
-//	 @GetMapping("/role/{role}") 
-//	 public List<Users> getUserByrole(@PathVariable Long role){ 
-//		 return usersService.findByRole(role); 
-//	 }
 	 
 	
 	@GetMapping("/login/{loginId}")

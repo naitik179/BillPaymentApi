@@ -49,6 +49,10 @@ public class AccountTransactionService {
 		return res;
 //		return accountTransactionRepository.findBySeqid(accountsRepository.findById(sequenceid).get());
 	}
-	
-	
+
+	public List<AccountTransaction> getTransactionAcc(Long accno) {
+		
+		return accountTransactionRepository.findByConsumeraccountno(accno);
+	}
+
 }

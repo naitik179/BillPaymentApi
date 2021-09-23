@@ -53,5 +53,11 @@ public class AccountTransactionController {
 		
 	}	
 	
+	@GetMapping("/account/{accno}")
+	public List<AccountTransaction> getTransactionByaccno(@PathVariable Long accno) {
+            return accountTransactionService.getTransactionAcc(accno);
+    }
+
+	
 	
 }

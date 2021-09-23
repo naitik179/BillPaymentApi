@@ -14,5 +14,8 @@ public interface AccountTransactionRepository extends JpaRepository<AccountTrans
 
 
 	List<AccountTransaction> findBySeqid(Accounts seqid);
+	
+	List<AccountTransaction> findByConsumeraccountno(Long consumeraccountno);
+	
 
 }

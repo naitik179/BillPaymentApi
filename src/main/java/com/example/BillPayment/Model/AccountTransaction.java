@@ -51,6 +51,7 @@ public class AccountTransaction {
 //    )
 //	private Accounts seqid;
 	private Long seqid;
+	private Long consumeraccountno;
 	
 	
 	// to be mapped with bills - billid
